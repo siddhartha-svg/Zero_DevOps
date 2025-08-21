@@ -39,3 +39,107 @@ A new "Comments" column should be added to the end of the original table. The fo
 2.  **Rows**: Set the `Comments` column as the pivot table's rows.
 3.  **Columns**: Set the `Severity` column as the pivot table's columns.
 4.  **Values**: Set the `IPAddress` column as the pivot table's values.
+
+
+
+```
+=IF(ROW()=1, "Comments",
+ IF(REGEXMATCH(U:U, "Info|Low"), "Info/Low",
+ IF(REGEXMATCH(G:G, "PRODUCTION"), "Prod",
+ IF(REGEXMATCH(C:C, "vd"), "DBA",
+ IF(REGEXMATCH(G:G, "STAGING"), "Staging-NP",
+ IF(REGEXMATCH(G:G, "USER ACCEPTANCE TEST"), "UAT",
+ IF(REGEXMATCH(C:C, "tdc"), "TDC-NP",
+ IF(REGEXMATCH(B:B, "^sacldiipva0([5-9]|[1-5][0-9]|6[0-5])$"), "SDC-NP",
+ IF(REGEXMATCH(AH:AH, "RHEL"), "SES",
+ IF(REGEXMATCH(I:I, "Windows"), "Windows",
+ IF(REGEXMATCH(AS:AS, "opsware"), "HPSA",
+ IF(REGEXMATCH(AS:AS, "/apps/k2view/apps/openlogic-openjdk"), "K2VIEW-JDK",
+ IF(REGEXMATCH(AS:AS, "/apps/opt/uim/spark/spark-2.3.1-bin-hadoop2.7/project/jdk"), "JDK-SPARK",
+ IF(REGEXMATCH(AS:AS, "opt/app/SPARK/SPARK/jdk"), "JDK-SPARK",
+ IF(REGEXMATCH(AS:AS, "/app/mqm/java/jre64/"), "MQM-Jre",
+ IF(REGEXMATCH(AS:AS, "/opt/app/fabric/apps/openlogic-openjdk"), "JDK-UIM",
+ IF(REGEXMATCH(AS:AS, "numpy"), "numpy",
+ IF(REGEXMATCH(AS:AS, "/opt/IBM/HTTPServer855/bin/httpd"), "Httpd-/opt/IBM",
+ IF(REGEXMATCH(AS:AS, "jenkins"), "jenkins",
+ IF(REGEXMATCH(AS:AS, "fortify"), "Fortify",
+ IF(REGEXMATCH(AS:AS, "/apps/opt/microfocus/Discovery/bin/libcrypto"), "Microfocus",
+ IF(REGEXMATCH(AS:AS, "rbmtmp"), "rbmtmp",
+ IF(REGEXMATCH(AS:AS, "/apps/k2view/apps/pgsql"), "k2view-pgsql",
+ IF(REGEXMATCH(AS:AS, "/opt/app/PY-365/lib/libcrypto.so"), "WAS-Libs/PY-365",
+ IF(REGEXMATCH(AS:AS, "/usr/lib64/libcrypto.so."), "WAS-Libs",
+ IF(REGEXMATCH(AS:AS, "/opt/app/uim/spark_bkp/jdk-17.0.12/"), "JDK-SPARK-UIM",
+ IF(REGEXMATCH(AS:AS, "rbmtmp"), "rbmtmp",
+ IF(REGEXMATCH(AS:AS, "/opt/VIS2/nodejs"), "Node",
+ IF(REGEXMATCH(AS:AS, "/oracle/client/19.0.0.0/OPatch"), "Oracle_bkp",
+ IF(REGEXMATCH(AS:AS, "/jenkins/Fortify/"), "Fortify",
+ IF(REGEXMATCH(AS:AS, "/apps/opt/uim/spark/spark-2.3.1-bin-hadoop2.7/project/Hijack_UI_Project_PP/jdk180_421_64"), "JDK-SPARK-UIM",
+ ""
+ )))))))))))))))))))))))))))))
+```
+
+
+
+# MY-DATA-SHEET
+
+
+──────────────────────────────────────────────────────📄EY2V───────────────────────────────────────────────────────────
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+> Add the coumn at thend with name of Comments 
+> Insert pivot table in new sheet 
+> From the table now making pivot table into 
+─ Rows as Comments 
+  Columns as Severity	
+  Values as IPAddress
+> S column : Severity Column :  check and tick mark it as Info and Low and in Comments as Info/low (Last column)
+> G column : Environment Column : check and tick mark it as PRODUCTION add in Comments as Prod 
+> G column : Environment Column : check and tick mark it as STAGING add in Comments as STAGING-NP 
+> C column : FQDN Column : whichever server (box) names contain tdc , mark it in comments as TDC-NP
+> AF column : Vuln Name : whichever box contain RHEL  mark it in comments as SES
+> AQ column : Plugin Output : whichever box contain  /oracle/client/19.3.0.0.0/OPatch/  mark it in comments as UAT 
+> AQ column : Plugin Output : whichever box contain  /opt/oracle.ahf/python/lib/libcrypto  mark it in comments as UAT
+> AQ column : Plugin Output : whichever box contain  /usr/lib64/libcrypto.so.  mark it in comments as Lib64 
+>  AQ column : Plugin Output :whichever box contain  /opt/app/SPARK/SPARK/jdk-17.0.  mark it in comments as JDK-SPARK/SPARK/jdk-17
+> AQ column : Plugin Output : whichever box contain  /opt/app/jdk-17.0. mark it in comments as JDK-opt/app/SPARK/SPARK/jdk-17
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+```
+=IF(ROW()=1, "Comments",
+ IF(REGEXMATCH(U:U, "Info|Low"), "Info/Low",
+ IF(REGEXMATCH(G:G, "PRODUCTION"), "Prod",
+ IF(REGEXMATCH(G:G, "STAGING"), "Staging-NP",
+ IF(REGEXMATCH(G:G, "USER ACCEPTANCE TEST"), "UAT",
+ IF(REGEXMATCH(C:C, "tdc"), "TDC-NP",
+ IF(REGEXMATCH(AH:AH, "RHEL"), "SES",
+ IF(REGEXMATCH(AS:AS, "/opt/oracle.ahf/python/lib/libcrypto"), "HPSA",
+ IF(REGEXMATCH(AS:AS, "/usr/lib64/libcrypto.so"), "Lib64",
+ IF(REGEXMATCH(AS:AS, "/opt/app/SPARK/SPARK/jdk"), "JDK-SPARK",
+ IF(REGEXMATCH(AS:AS, "/opt/app/jdk"), "JDK-opt/app/",
+ IF(REGEXMATCH(AS:AS, "opsware"), "HPSA",
+ IF(REGEXMATCH(AS:AS, "/mqm/data/MQHA/software/MQServer/lap/jre/ibm"), "MQM-Jre",
+ IF(REGEXMATCH(AS:AS, "/opt/mqm/bin/"), "MQM-Bin",
+ IF(REGEXMATCH(AS:AS, "/root/jdk"), "JDK-Root",
+ IF(REGEXMATCH(AS:AS, "/opt/app/lib64_bkp"), "LIB64_bkp",
+ ""
+ ))))))))))))))))
+```
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
