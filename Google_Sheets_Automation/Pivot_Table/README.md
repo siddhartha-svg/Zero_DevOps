@@ -2,6 +2,25 @@
 
 This document outlines the spreadsheet formulas used to automatically calculate the summary table from the raw data.
 
+| Comments | Critical | High | Info | Low | Medium | Grand Total |
+|---|---|---|---|---|---|---|
+| DBA | 92 | 298 | | | 2065 | 2455 |
+| Fortify | | | | | 3 | 3 |
+| HPSA | | | | | 417 | 417 |
+| InfoLow | | | 9528 | 7263 | | 16791 |
+| JDK-K2view | | 37 | | | 10 | 47 |
+| JDK-opt/app/ | | 62 | | | 18 | 80 |
+| JDK-SPARK | | 37 | | | 1 | 38 |
+| JDK-SPARK-UIM | | 2 | | | 1 | 3 |
+| jenkins | 1 | 9 | | | 10 | 20 |
+| Prod | 2669 | 8938 | | | 51248 | 62855 |
+| SDC-NP | | 30 | | | 370 | 400 |
+| SES | | | | | 2578 | 2578 |
+| Staging-NP | 50 | 171 | | | 910 | 1131 |
+| TDC-NP | | | | | 28 | 28 |
+| **Grand Total** | **2812** | **9584** | **9528** | **7263** | **57659** | **86846** |
+
+
 ### Formulas by POC/Severity
 
 The following table provides the formulas used for each category and severity level.
