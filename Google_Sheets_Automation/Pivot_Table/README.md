@@ -48,3 +48,29 @@ The following table provides the formulas used for each category and severity le
 * `=M2+N2+O2`: The `Total` column is a simple addition of the three severity columns to the left of it.
 
 This approach provides a robust way to categorize and sum data from various sources into a single, clean summary.
+
+
+# FINAL SHEET
+
+| POC/Severity              | Critical | High | Medium | Total |
+| ------------------------- | :------- | :--- | :----- | :---- |
+| **PROD** | 2669     | 8938 | 51248  | 62855 |
+| **SES/HPSA** | 0        | 0    | 2995   | 2995  |
+| **DBA** | 92       | 298  | 2065   | 2455  |
+| **Non Prod (TDC/STG/UAT)**| 50       | 171  | 1308   | 1559  |
+| **Non Prod (VZI)** | 1        | 147  | 43     | 191   |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
