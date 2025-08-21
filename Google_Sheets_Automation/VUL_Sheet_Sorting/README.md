@@ -84,7 +84,7 @@ A new "Comments" column should be added to the end of the original table. The fo
 
 
 ──────────────────────📄EY2V───────────────────────────────────
-
+```
 > Add the coumn at thend with name of Comments 
 > Insert pivot table in new sheet 
 > From the table now making pivot table into 
@@ -101,7 +101,7 @@ A new "Comments" column should be added to the end of the original table. The fo
 > AQ column : Plugin Output : whichever box contain  /usr/lib64/libcrypto.so.  mark it in comments as Lib64 
 >  AQ column : Plugin Output :whichever box contain  /opt/app/SPARK/SPARK/jdk-17.0.  mark it in comments as JDK-SPARK/SPARK/jdk-17
 > AQ column : Plugin Output : whichever box contain  /opt/app/jdk-17.0. mark it in comments as JDK-opt/app/SPARK/SPARK/jdk-17
-
+```
 ─────────────────────────────────────────────────────────────────
 
 ```
